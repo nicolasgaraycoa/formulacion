@@ -1,14 +1,10 @@
 import os
 import pandas as pd
 import numpy as np
-import pandas_datareader as pdr
 import streamlit as st
 import streamlit_authenticator as stauth
-import yaml 
-from yaml.loader import SafeLoader
 import scipy
 from scipy.optimize import linprog
-from st_aggrid import AgGrid
 
 st.set_page_config(page_title="Formulacion", layout="wide")
 
