@@ -20,18 +20,18 @@ with st.sidebar:
 requerimientos = pd.DataFrame(
     {'parametro': ['grado_min', 'grado_max', 'acidez', 'esteres', 'aldehidos', 'alcoholes_superiores',
                    'metanol', 'furfural'],
-    'R1': [65, 67, 150, 100, 150, 150, 100, 10],
-    'R2': [65, 67, 200, 100, 200, 200, 100, 10],
-    'R3': [65, 67, 250, 100, 250, 225, 100, 10],
-    'R4': [65, 67, 300, 100, 300, 275, 100, 10],
-    'R5': [65, 67, 350, 100, 350, 300, 100, 10],
-    'R6': [65, 67, 400, 100, 400, 350, 100, 10],
-    'R7': [65, 67, 450, 100, 450, 400, 100, 10],
-    'R8': [60, 60, 475, 100, 475, 425, 100, 10],
-    'R9': [60, 60, 500, 100, 500, 450, 100, 10],
-    'R10': [60, 60, 525, 100, 525, 475, 100, 10],
-    'R11': [60, 60, 562, 100, 562, 487, 100, 10],
-    'R12': [60, 60, 600, 100, 600, 500, 100, 10]}
+    'R1': [74, 76, 15, 15, 1, 15, 10, 10],
+    'R2': [74, 76, 20, 20, 1, 20, 10, 10],
+    'R3': [74, 76, 25, 25, 1, 22.5, 10, 10],
+    'R4': [74, 76, 30, 30, 1, 27.5, 10, 10],
+    'R5': [74, 76, 35, 35, 1, 30.0, 10, 10],
+    'R6': [74, 76, 40, 40, 1, 35.0, 10, 10],
+    'R7': [74, 76, 45, 45, 1, 40.0, 10, 10],
+    'R8': [69, 71, 47, 47, 1, 42.5, 10, 10],
+    'R9': [69, 71, 50, 50, 1, 45.0, 10, 10],
+    'R10': [69, 71, 52.5, 52.5, 1, 47.5, 10, 10],
+    'R11': [69, 71, 56.2, 56.2, 1, 48.7, 10, 10],
+    'R12': [69, 71, 60.0, 60.0, 1, 50.0, 10, 10]}
 )
 
 requerimientos = requerimientos.swapaxes("index", "columns")
@@ -44,7 +44,7 @@ requerimientos = requerimientos.rename_axis(None, axis=1)
 
 costos = pd.DataFrame({
     'mp' : list(materia_prima.columns[1:]),
-    'costo': [1.08, 1.06, 4.35, 0.01]
+    'costo': [1.08, 1.06, 4.35, 0.001]
 })
 
 
@@ -91,8 +91,5 @@ solucion = pd.DataFrame(solucion, columns = list(materia_prima.columns[1:]))
 recomendaciones = pd.DataFrame(['R'+str(i) for i in range(1,31,1)], columns=['edad'])
 recomendaciones = pd.concat([recomendaciones, solucion], axis=1)
 
-
 st.dataframe(recomendaciones, hide_index=True)
-
-
 
